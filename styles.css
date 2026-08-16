@@ -73,7 +73,7 @@ img {
   font-family: "Anton", sans-serif;
   font-weight: 400;
   text-transform: uppercase;
-  font-size: clamp(2rem, 10vw, 15rem);
+  font-size: clamp(2.5rem, 13vw, 19rem);
   line-height: 1.15;
 }
 
@@ -121,7 +121,7 @@ nav a {
 
 .header {
   position: absolute;
-  top: 50%;
+  top: 38%;
   left: 50%;
   display: flex;
   justify-content: center;
@@ -135,7 +135,7 @@ nav a {
   font-family: "Anton", sans-serif;
   font-weight: 400;
   text-transform: uppercase;
-  font-size: clamp(2.5rem, 15vw, 25rem);
+  font-size: clamp(3rem, 18vw, 30rem);
   line-height: 1.15;
 }
 
