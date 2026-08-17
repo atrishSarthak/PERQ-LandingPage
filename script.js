@@ -157,6 +157,33 @@ tl.to(
   4.75,
 );
 
+/* ---------- Header hover (slot machine reveal) ---------- */
+
+const headerH1 = document.querySelector(".header h1");
+let headerHoverTl = null;
+
+headerH1.addEventListener("mouseenter", () => {
+  if (headerHoverTl && headerHoverTl.isActive()) return;
+
+  const chars = headerSplit.chars;
+
+  headerHoverTl = gsap.timeline();
+  headerHoverTl
+    .to(chars, {
+      y: "-100%",
+      duration: 0.65,
+      ease: "hop2",
+      stagger: { each: 0.125, from: "random" },
+    })
+    .set(chars, { y: "100%" })
+    .to(chars, {
+      y: "0%",
+      duration: 0.65,
+      ease: "hop",
+      stagger: { each: 0.075, from: "random" },
+    });
+});
+
 /* ---------- Stickygrid (MIMIR) ---------- */
 
 const visionData = [
