@@ -283,7 +283,7 @@ pinTl
     ease: "none",
     duration: 1,
   })
-  .to(".center-text", { opacity: 0, duration: 1 }, "<")
+  .to(".center-text", { y: "-34vh", scale: 0.7, duration: 1, ease: "power1.inOut" }, "<")
   .to(".target-overlay", { opacity: 1, duration: 0.2 })
   .to(descSplits[0].lines, {
     yPercent: 0,
