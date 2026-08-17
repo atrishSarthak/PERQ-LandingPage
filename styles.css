@@ -1,9 +1,11 @@
-@import url("https://fonts.cdnfonts.com/css/pp-neue-montreal");
+@import url("https://api.fontshare.com/v2/css?f[]=general-sans@400,500,700&display=swap");
 
 :root {
   --base-100: #fff;
   --base-200: #e0e2db;
   --base-300: #141414;
+  --color-accent: #c1121f;
+  --font-body: "General Sans", sans-serif;
 }
 
 * {
@@ -12,10 +14,14 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: var(--font-body);
+}
+
 h1,
 a,
 p {
-  font-family: "PP Neue Montreal", sans-serif;
+  font-family: var(--font-body);
   font-weight: 500;
   letter-spacing: -2%;
   line-height: 1;
@@ -106,8 +112,13 @@ nav {
 }
 
 nav a {
-  color: var(--base-300);
+  color: var(--color-accent);
   line-height: 1;
+  transition: color 0.4s ease;
+}
+
+nav.nav-on-dark a {
+  color: var(--base-100);
 }
 
 .hero {
@@ -149,7 +160,7 @@ nav a {
 
 .header {
   position: absolute;
-  top: 38%;
+  top: 44%;
   left: 50%;
   display: flex;
   justify-content: center;
@@ -166,6 +177,24 @@ nav a {
   font-size: clamp(3rem, 18vw, 30rem);
   line-height: 1.15;
   cursor: pointer;
+  overflow: hidden;
+}
+
+.hero-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero-lede {
+  max-width: 52vw;
+  margin-top: 2.5rem;
+  font-family: var(--font-body);
+  font-size: clamp(1.5rem, 2.2vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: 0;
+  color: var(--base-300);
 }
 
 .hero-footer {
@@ -178,8 +207,14 @@ nav a {
   align-items: flex-end;
 }
 
+.hero-footer p {
+  line-height: 1.3;
+  color: var(--color-accent);
+}
+
 .char,
 .word,
+.line,
 .preloader-counter p {
   transform: translateY(100%);
   will-change: transform;
@@ -302,30 +337,6 @@ nav a {
   pointer-events: none;
 }
 
-.vision-tag {
-  display: flex;
-  align-items: center;
-  font-size: 1vw;
-  font-weight: 500;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-}
-
-.vision-tag .tag-index {
-  margin-right: 1.25vw;
-}
-
-.vision-tag .tag-line {
-  flex-grow: 1;
-  height: 0.05vw;
-  min-height: 1px;
-  background: rgba(255, 255, 255, 0.3);
-}
-
-.vision-tag .tag-label {
-  margin-left: 1.25vw;
-}
-
 .vision-body {
   position: relative;
   width: 100%;
@@ -389,6 +400,12 @@ nav a {
 }
 
 @media (max-width: 767px) {
+  .hero-lede {
+    max-width: 88vw;
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
+  }
+
   .center-text-eyebrow {
     font-size: 3vw;
     margin-bottom: 2vw;
@@ -411,15 +428,6 @@ nav a {
 
   .target-overlay {
     padding: 2vw;
-  }
-
-  .vision-tag {
-    font-size: 3.2vw;
-  }
-
-  .vision-tag .tag-index,
-  .vision-tag .tag-label {
-    margin: 0 1vw;
   }
 
   .moving-heading-wrap {

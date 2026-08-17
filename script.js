@@ -15,6 +15,11 @@ gsap.ticker.add((time) => {
 });
 ScrollTrigger.refresh();
 
+document.querySelector(".nav-home").addEventListener("click", (e) => {
+  e.preventDefault();
+  lenis.scrollTo(0);
+});
+
 const splitText = (selector, type, className, mask = true) => {
   return SplitText.create(selector, {
     type: type,
@@ -27,6 +32,7 @@ const preloaderHeaderSplit = splitText(".preloader-header h1", "chars", "char");
 const navSplit = splitText("nav a", "words", "word");
 const headerSplit = splitText(".header h1", "chars", "char", false);
 const footerSplit = splitText(".hero-footer p", "words", "word");
+const heroLedeSplit = splitText(".hero-lede", "lines", "line");
 
 const preloaderImgInitRotations = [7.5, -2.5, -10, 12.5, -5, 5];
 gsap.set(".preloader-img", {
@@ -157,6 +163,17 @@ tl.to(
   4.75,
 );
 
+tl.to(
+  ".hero-lede .line",
+  {
+    y: "0%",
+    duration: 1.1,
+    ease: "hop",
+    stagger: 0.12,
+  },
+  4.95,
+);
+
 /* ---------- Header hover (slot machine reveal) ---------- */
 
 const headerH1 = document.querySelector(".header h1");
@@ -182,6 +199,20 @@ headerH1.addEventListener("mouseenter", () => {
       ease: "hop",
       stagger: { each: 0.075, from: "random" },
     });
+});
+
+/* ---------- Nav color swap on dark section ---------- */
+
+const navEl = document.querySelector("nav");
+
+ScrollTrigger.create({
+  trigger: ".stickygrid",
+  start: "top top",
+  end: "bottom bottom",
+  onEnter: () => navEl.classList.add("nav-on-dark"),
+  onLeave: () => navEl.classList.remove("nav-on-dark"),
+  onEnterBack: () => navEl.classList.add("nav-on-dark"),
+  onLeaveBack: () => navEl.classList.remove("nav-on-dark"),
 });
 
 /* ---------- Stickygrid (MIMIR) ---------- */
