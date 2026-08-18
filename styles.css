@@ -324,6 +324,24 @@ nav.nav-on-dark a {
   display: block;
 }
 
+.target::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.38) 32%,
+    rgba(0, 0, 0, 0.48) 50%,
+    rgba(0, 0, 0, 0.38) 68%,
+    rgba(0, 0, 0, 0.12) 76%,
+    rgba(0, 0, 0, 0.32) 86%,
+    rgba(0, 0, 0, 0.42) 100%
+  );
+}
+
 .target-overlay {
   position: absolute;
   inset: 0;
@@ -358,8 +376,8 @@ nav.nav-on-dark a {
 
 .moving-heading {
   will-change: transform;
-  font-size: 7vw;
-  font-weight: 500;
+  font-size: 5vw;
+  font-weight: 700;
   letter-spacing: -0.02em;
   text-transform: uppercase;
   white-space: nowrap;
@@ -377,7 +395,7 @@ nav.nav-on-dark a {
 .vision-desc-wrap {
   position: absolute;
   z-index: 10;
-  width: 30vw;
+  width: 34vw;
   right: 1.5vw;
   bottom: 1.5vw;
 }
@@ -385,8 +403,8 @@ nav.nav-on-dark a {
 .vision-desc-inner {
   position: relative;
   width: 100%;
-  min-height: 12vw;
-  height: 16vw;
+  min-height: 14vw;
+  height: 19vw;
 }
 
 .desc-block {
@@ -394,7 +412,7 @@ nav.nav-on-dark a {
   inset: 0;
   margin: 0;
   width: 100%;
-  font-size: 1.1vw;
+  font-size: 1.5vw;
   line-height: 1.4;
   font-weight: 500;
 }
@@ -435,23 +453,24 @@ nav.nav-on-dark a {
   }
 
   .moving-heading {
-    font-size: 16vw;
+    font-size: 11vw;
+    font-weight: 700;
     gap: 8.5vw;
   }
 
   .vision-desc-wrap {
-    width: 80vw;
+    width: 84vw;
     right: 1vw;
     bottom: 0;
   }
 
   .vision-desc-inner {
-    min-height: 25vw;
-    height: 30vw;
+    min-height: 30vw;
+    height: 36vw;
   }
 
   .desc-block {
-    font-size: 3.7vw;
+    font-size: 4.4vw;
   }
 }
 

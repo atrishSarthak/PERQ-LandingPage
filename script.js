@@ -218,9 +218,9 @@ ScrollTrigger.create({
 /* ---------- Stickygrid (MIMIR) ---------- */
 
 const visionData = [
-  { heading: "Design", index: 0 },
-  { heading: "Innovation", index: 1 },
-  { heading: "Enhancement", index: 2 },
+  { heading: "Instant Match", index: 0 },
+  { heading: "Checkout Intelligence", index: 1 },
+  { heading: "Smarter Spending", index: 2 },
 ];
 
 const gridDuration = 0.8;
@@ -307,4 +307,8 @@ for (let s = 0; s < visionData.length - 1; s++) {
 }
 
 window.addEventListener("load", () => ScrollTrigger.refresh());
+
+if (document.fonts && document.fonts.ready) {
+  document.fonts.ready.then(() => ScrollTrigger.refresh());
+}
 
